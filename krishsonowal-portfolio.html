@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Krish Sonowal — SEO Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#faf6f0;--warm-white:#fffdf9;
+  --clay:#c4714a;--clay-light:#e8a882;--clay-dark:#9d5337;
+  --bark:#3d2b1f;--bark-mid:#6b4c3b;
+  --sage:#7a8c6e;--sand:#e8dcc8;
+  --fd:'Playfair Display',Georgia,serif;
+  --fb:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--bark);font-family:var(--fb);font-weight:300;overflow-x:hidden;}
+.page{display:none;}.page.active{display:block;}
+@keyframes fu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.fi1{animation:fu .7s .00s ease both;}
+.fi2{animation:fu .7s .15s ease both;}
+.fi3{animation:fu .7s .30s ease both;}
+.fi4{animation:fu .7s .45s ease both;}
+.fi5{animation:fu .7s .60s ease both;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 4rem;background:rgba(250,246,240,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--sand);}
+.nav-logo{font-family:var(--fd);font-size:1.25rem;color:var(--bark);cursor:pointer;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--bark-mid);font-size:.875rem;letter-spacing:.06em;text-transform:uppercase;transition:color .25s;cursor:pointer;}
+.nav-links a:hover{color:var(--clay);}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 4rem 4rem;gap:4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,113,74,.12) 0%,transparent 70%);pointer-events:none;}
+.hero-text{animation:fu .9s ease both;}
+.hero-eyebrow{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem;}
+.hero-eyebrow::before{content:'';display:inline-block;width:32px;height:1px;background:var(--clay);}
+.hero-name{font-family:var(--fd);font-size:clamp(3rem,5vw,5rem);line-height:1.1;color:var(--bark);margin-bottom:1.5rem;}
+.hero-name em{font-style:italic;color:var(--clay);}
+.hero-tagline{font-size:1.05rem;line-height:1.75;color:var(--bark-mid);max-width:420px;margin-bottom:2.5rem;}
+.hero-cta{display:inline-flex;align-items:center;gap:.625rem;background:var(--clay);color:#fff;border:none;padding:.875rem 2rem;border-radius:50px;font-size:.9rem;cursor:pointer;font-family:var(--fb);transition:background .25s,transform .2s;}
+.hero-cta:hover{background:var(--clay-dark);transform:translateY(-2px);}
+.hero-cta:hover svg{transform:translateX(4px);}
+.hero-cta svg{transition:transform .2s;}
+.hero-visual{display:flex;flex-direction:column;gap:1.25rem;animation:fu .9s .2s ease both;}
+.stat-card{background:var(--warm-white);border:1px solid var(--sand);border-radius:16px;padding:1.5rem 2rem;display:flex;align-items:center;gap:1.5rem;transition:transform .25s,box-shadow .25s;}
+.stat-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(61,43,31,.09);}
+.stat-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--clay-light),var(--clay));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem;}
+.stat-number{font-family:var(--fd);font-size:2rem;color:var(--bark);line-height:1;}
+.stat-label{font-size:.8rem;color:var(--bark-mid);margin-top:.2rem;}
+
+/* ABOUT */
+.about{padding:7rem 4rem;display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:center;background:var(--warm-white);border-top:1px solid var(--sand);border-bottom:1px solid var(--sand);}
+.section-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);margin-bottom:1rem;}
+.section-heading{font-family:var(--fd);font-size:clamp(2rem,3vw,2.75rem);line-height:1.2;margin-bottom:1.5rem;}
+.about-portrait{position:relative;}
+.portrait-frame{width:100%;aspect-ratio:3/4;border-radius:24px;background:linear-gradient(135deg,var(--sand) 0%,var(--clay-light) 60%,var(--clay) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.portrait-frame::after{content:'KS';font-family:var(--fd);font-size:5rem;color:rgba(255,255,255,.5);font-style:italic;}
+.portrait-badge{position:absolute;bottom:-1rem;right:-1rem;background:var(--clay);color:#fff;border-radius:14px;padding:.875rem 1.25rem;font-size:.8rem;font-weight:500;box-shadow:0 8px 24px rgba(196,113,74,.35);}
+.portrait-badge strong{display:block;font-family:var(--fd);font-size:1.4rem;}
+.about-body{font-size:1rem;line-height:1.85;color:var(--bark-mid);}
+.about-body p+p{margin-top:1.25rem;}
+.skills-grid{display:flex;flex-wrap:wrap;gap:.625rem;margin-top:2rem;}
+.skill-chip{background:var(--sand);color:var(--bark-mid);padding:.4rem 1rem;border-radius:50px;font-size:.8rem;}
+
+/* CASE STUDIES GRID */
+.case-studies{padding:7rem 4rem;}
+.case-studies-header{margin-bottom:3.5rem;}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;}
+.project-card{background:var(--warm-white);border:1px solid var(--sand);border-radius:20px;overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:pointer;display:flex;flex-direction:column;}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(61,43,31,.1);}
+.project-card.featured{grid-column:1/-1;flex-direction:row;}
+.project-thumb{height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.project-card.featured .project-thumb{width:380px;height:auto;min-height:280px;}
+.thumb-bg-1{background:linear-gradient(135deg,#f0e6d8,#dfc5a8);}
+.thumb-bg-2{background:linear-gradient(135deg,#d8e8d4,#a8c4a0);}
+.thumb-bg-3{background:linear-gradient(135deg,#d8dff0,#a8b4d4);}
+.thumb-bg-4{background:linear-gradient(135deg,#f5e6d0,#e8c89a);}
+.thumb-icon{font-size:4rem;opacity:.6;}
+.project-tag{position:absolute;top:1rem;left:1rem;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);padding:.3rem .75rem;border-radius:50px;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-mid);}
+.project-body{padding:1.75rem;flex:1;display:flex;flex-direction:column;}
+.project-card.featured .project-body{padding:2.5rem;justify-content:center;}
+.project-client{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);margin-bottom:.5rem;}
+.project-title{font-family:var(--fd);font-size:1.2rem;margin-bottom:.75rem;line-height:1.3;}
+.project-card.featured .project-title{font-size:1.6rem;}
+.project-desc{font-size:.875rem;color:var(--bark-mid);line-height:1.7;margin-bottom:1.25rem;flex:1;}
+.project-metrics{display:flex;gap:1.5rem;}
+.metric-val{font-family:var(--fd);font-size:1.4rem;color:var(--clay);}
+.metric-key{font-size:.7rem;color:var(--bark-mid);margin-top:.1rem;}
+.project-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--clay);font-size:.85rem;font-weight:500;margin-top:1.25rem;transition:gap .2s;}
+.project-card:hover .project-link{gap:.8rem;}
+
+/* DETAIL PAGES */
+.detail-page{padding-top:80px;}
+.detail-hero{background:var(--warm-white);border-bottom:1px solid var(--sand);padding:4rem 4rem 0;}
+.back-btn{display:inline-flex;align-items:center;gap:.5rem;color:var(--bark-mid);font-size:.85rem;cursor:pointer;border:none;background:none;padding:0;margin-bottom:2.5rem;transition:color .2s;font-family:var(--fb);}
+.back-btn:hover{color:var(--clay);}
+.back-btn:hover svg{transform:translateX(-4px);}
+.back-btn svg{transition:transform .2s;}
+.detail-eyebrow{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;}
+.detail-tag{background:var(--sand);color:var(--bark-mid);padding:.3rem .875rem;border-radius:50px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;}
+.detail-period{font-size:.8rem;color:var(--bark-mid);}
+.detail-title{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin-bottom:1rem;}
+.detail-title em{font-style:italic;color:var(--clay);}
+.detail-subtitle{font-size:1rem;color:var(--bark-mid);line-height:1.75;max-width:640px;padding-bottom:3rem;}
+.summary-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--sand);}
+.summary-stat{padding:2rem;border-right:1px solid var(--sand);text-align:center;}
+.summary-stat:last-child{border-right:none;}
+.summary-stat-val{font-family:var(--fd);font-size:2.25rem;color:var(--clay);line-height:1;}
+.summary-stat-growth{font-size:.72rem;color:var(--sage);margin-top:.25rem;}
+.summary-stat-label{font-size:.78rem;color:var(--bark-mid);margin-top:.5rem;}
+.detail-body{max-width:1100px;margin:0 auto;padding:4rem;display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start;}
+.detail-content h2{font-family:var(--fd);font-size:1.55rem;margin-bottom:1rem;margin-top:2.5rem;}
+.detail-content h2:first-child{margin-top:0;}
+.detail-content p{font-size:.95rem;line-height:1.85;color:var(--bark-mid);margin-bottom:1rem;}
+.detail-content p strong{color:var(--bark);font-weight:500;}
+.detail-sidebar{position:sticky;top:100px;}
+.sidebar-card{background:var(--warm-white);border:1px solid var(--sand);border-radius:16px;padding:1.5rem;margin-bottom:1.5rem;}
+.sidebar-card-title{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--clay);margin-bottom:1.25rem;font-weight:500;}
+.ctable{width:100%;border-collapse:collapse;font-size:.83rem;}
+.ctable th{text-align:left;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--bark-mid);padding-bottom:.75rem;font-weight:400;}
+.ctable th:not(:first-child){text-align:right;}
+.ctable td{padding:.55rem 0;border-top:1px solid var(--sand);}
+.ctable td:not(:first-child){text-align:right;}
+.ctable .mn{color:var(--bark-mid);}
+.ctable .va{color:var(--bark);font-weight:500;}
+.ctable .vg{color:var(--sage);font-size:.76rem;}
+.kw-list{list-style:none;}
+.kw-item{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--sand);font-size:.83rem;}
+.kw-item:last-child{border-bottom:none;}
+.kw-badge{background:var(--sand);color:var(--bark-mid);padding:.2rem .6rem;border-radius:50px;font-size:.72rem;white-space:nowrap;}
+.snap-info{font-size:.82rem;color:var(--bark-mid);line-height:1.9;}
+.snap-info strong{color:var(--bark);}
+
+/* FOOTER */
+footer{background:var(--bark);color:rgba(255,255,255,.6);padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-name{font-family:var(--fd);font-size:1.1rem;color:#fff;font-style:italic;}
+.footer-note{font-size:.8rem;margin-top:.25rem;}
+.footer-contact{text-align:right;font-size:.85rem;}
+.footer-contact a{color:var(--clay-light);text-decoration:none;}
+.footer-contact a:hover{color:#fff;}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:1.25rem 2rem;}
+  .nav-links{gap:1.5rem;}
+  .hero{grid-template-columns:1fr;padding:7rem 2rem 3rem;}
+  .about{grid-template-columns:1fr;padding:4rem 2rem;gap:3rem;}
+  .about-portrait{max-width:320px;}
+  .case-studies{padding:4rem 2rem;}
+  .projects-grid{grid-template-columns:1fr;}
+  .project-card.featured{flex-direction:column;}
+  .project-card.featured .project-thumb{width:100%;height:220px;}
+  .summary-strip{grid-template-columns:repeat(2,1fr);}
+  .summary-stat:nth-child(2){border-right:none;}
+  .summary-stat:nth-child(3){border-top:1px solid var(--sand);}
+  .detail-body{grid-template-columns:1fr;padding:2rem;}
+  .detail-sidebar{position:static;}
+  .detail-hero{padding:2rem 2rem 0;}
+  footer{flex-direction:column;gap:1.5rem;text-align:center;padding:2.5rem 2rem;}
+  .footer-contact{text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo" onclick="goHome()">Krish Sonowal</span>
+  <ul class="nav-links">
+    <li><a onclick="goHome();delayScroll('#about')">About</a></li>
+    <li><a onclick="goHome();delayScroll('#work')">Work</a></li>
+    <li><a onclick="goHome();delayScroll('#contact')">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">SEO Specialist</p>
+      <h1 class="hero-name">Hi, I'm<br><em>Krish Sonowal.</em></h1>
+      <p class="hero-tagline">I help brands grow organically &mdash; turning search intent into meaningful traffic, and traffic into lasting results.</p>
+      <button class="hero-cta" onclick="delayScroll('#work')">
+        See my work
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="hero-visual">
+      <div class="stat-card"><div class="stat-icon">&#128200;</div><div><div class="stat-number">4,066%</div><div class="stat-label">Peak organic traffic growth</div></div></div>
+      <div class="stat-card"><div class="stat-icon">&#128269;</div><div><div class="stat-number">870+</div><div class="stat-label">Keywords ranked for a single client</div></div></div>
+      <div class="stat-card"><div class="stat-icon">&#129309;</div><div><div class="stat-number">20+</div><div class="stat-label">Happy clients across industries</div></div></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-portrait fi1">
+      <div class="portrait-frame"></div>
+      <div class="portrait-badge"><strong>5+</strong> Years in SEO</div>
+    </div>
+    <div class="fi2">
+      <p class="section-label">About Me</p>
+      <h2 class="section-heading">Search is personal.<br>So is my approach.</h2>
+      <div class="about-body">
+        <p>I'm Krish &mdash; an SEO specialist who believes great rankings start with understanding real people, not just algorithms. I combine technical know-how with a genuine curiosity for what makes audiences tick.</p>
+        <p>Whether it's a local business trying to get found or a growing brand ready to compete nationally, I craft strategies that are clear, sustainable, and built around your actual goals.</p>
+        <p>When I'm not deep in keyword research or audit reports, I'm probably geeking out over content strategy, link building patterns, or the latest core update.</p>
+      </div>
+      <div class="skills-grid">
+        <span class="skill-chip">Technical SEO</span><span class="skill-chip">Keyword Research</span>
+        <span class="skill-chip">Content Strategy</span><span class="skill-chip">Link Building</span>
+        <span class="skill-chip">On-Page Optimization</span><span class="skill-chip">Local SEO</span>
+        <span class="skill-chip">Analytics &amp; Reporting</span><span class="skill-chip">Core Web Vitals</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-studies" id="work">
+    <div class="case-studies-header fi1">
+      <p class="section-label">Case Studies</p>
+      <h2 class="section-heading">Results that speak<br>for themselves.</h2>
+    </div>
+    <div class="projects-grid">
+
+      <!-- HEALTH AND ORANGE — featured -->
+      <div class="project-card featured fi2" onclick="openProject('health-and-orange')">
+        <div class="project-thumb thumb-bg-1">
+          <span class="project-tag">E-commerce &middot; Health &amp; Nutrition</span>
+          <span class="thumb-icon">&#129371;</span>
+        </div>
+        <div class="project-body">
+          <p class="project-client">Health and Orange</p>
+          <h3 class="project-title">From 12 clicks to 500 &mdash; a <em style="font-style:italic;color:var(--clay)">4,066%</em> organic traffic surge in under 4 months</h3>
+          <p class="project-desc">A cold-pressed edible oils brand went from near-zero search presence to ranking for 870+ keywords. Structured content and on-page SEO drove explosive growth in clicks and impressions.</p>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">+4,066%</div><div class="metric-key">Traffic growth</div></div>
+            <div class="metric"><div class="metric-val">23,600+</div><div class="metric-key">Monthly impressions</div></div>
+            <div class="metric"><div class="metric-val">870+</div><div class="metric-key">Keywords ranking</div></div>
+          </div>
+          <span class="project-link">Read full case study <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+
+      <!-- INTERNIFY -->
+      <div class="project-card fi3" onclick="openProject('internify')">
+        <div class="project-thumb thumb-bg-2">
+          <span class="project-tag">EdTech &middot; Careers</span>
+          <span class="thumb-icon">&#127891;</span>
+        </div>
+        <div class="project-body">
+          <p class="project-client">Internify</p>
+          <h3 class="project-title">Doubling organic traffic for a student internship platform in 3 months</h3>
+          <p class="project-desc">Targeted student-specific queries pushed Internify from page 2 to page 1, growing clicks by 121% and improving CTR from 7.7% to 10.1%.</p>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">+121%</div><div class="metric-key">Traffic growth</div></div>
+            <div class="metric"><div class="metric-val">700+</div><div class="metric-key">Keywords ranking</div></div>
+          </div>
+          <span class="project-link">Read full case study <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+
+      <!-- LEDGERSCFO -->
+      <div class="project-card fi4" onclick="openProject('ledgerscfo')">
+        <div class="project-thumb thumb-bg-3">
+          <span class="project-tag">Finance &middot; Consulting</span>
+          <span class="thumb-icon">&#128202;</span>
+        </div>
+        <div class="project-body">
+          <p class="project-client">LedgersCFO</p>
+          <h3 class="project-title">110% traffic growth and a 3x CTR jump for a CFO services firm</h3>
+          <p class="project-desc">On-page and structural SEO shifted LedgersCFO from deep page rankings into page 1 visibility, tripling CTR and driving higher-quality intent-matched traffic.</p>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">+110%</div><div class="metric-key">Traffic growth</div></div>
+            <div class="metric"><div class="metric-val">14.9%</div><div class="metric-key">CTR (from 4.6%)</div></div>
+          </div>
+          <span class="project-link">Read full case study <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+
+      <!-- P3 INDIA -->
+      <div class="project-card fi5" onclick="openProject('p3india')">
+        <div class="project-thumb thumb-bg-4">
+          <span class="project-tag">E-commerce &middot; Apparel</span>
+          <span class="thumb-icon">&#128084;</span>
+        </div>
+        <div class="project-body">
+          <p class="project-client">P3 India</p>
+          <h3 class="project-title">From position 65 to page 1 &mdash; 35,800% product visibility surge in 3 weeks</h3>
+          <p class="project-desc">Targeted product page SEO lifted a key ranking from #65 to #7 on Google and drove massive visibility growth across the apparel catalogue in under a month.</p>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">35,800%</div><div class="metric-key">Product visibility growth</div></div>
+            <div class="metric"><div class="metric-val">#7</div><div class="metric-key">From position 65</div></div>
+          </div>
+          <span class="project-link">Read full case study <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div>
+      <div class="footer-name">Krish Sonowal</div>
+      <div class="footer-note">SEO Specialist &middot; Available for projects</div>
+    </div>
+    <div class="footer-contact">
+      <p>Let's work together</p>
+      <a href="mailto:hello@krishsonowal.com">hello@krishsonowal.com</a>
+    </div>
+  </footer>
+</div>
+
+
+<!-- HEALTH AND ORANGE -->
+<div id="page-health-and-orange" class="page detail-page">
+  <div class="detail-hero">
+    <button class="back-btn" onclick="goHome()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to all projects</button>
+    <div class="detail-eyebrow"><span class="detail-tag">E-commerce</span><span class="detail-tag">Health &amp; Nutrition</span><span class="detail-period">Dec 2025 &ndash; Mar 2026 vs. Nov 2024 &ndash; Nov 2025</span></div>
+    <h1 class="detail-title">Health and Orange &mdash;<br><em>4,066% organic traffic growth</em><br>in under 4 months</h1>
+    <p class="detail-subtitle">A structured SEO strategy focused on content optimisation, keyword targeting, and search intent alignment transformed this cold-pressed oils brand from near-invisible to ranking for 870+ keywords on Google.</p>
+    <div class="summary-strip">
+      <div class="summary-stat"><div class="summary-stat-val">500</div><div class="summary-stat-growth">from 12 clicks &middot; +4,066%</div><div class="summary-stat-label">Monthly Clicks</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">23,600</div><div class="summary-stat-growth">from 531 &middot; +4,344%</div><div class="summary-stat-label">Monthly Impressions</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">7.1</div><div class="summary-stat-growth">improved from position 10.2</div><div class="summary-stat-label">Avg. Search Position</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">870+</div><div class="summary-stat-growth">total keywords ranking</div><div class="summary-stat-label">Keyword Footprint</div></div>
+    </div>
+  </div>
+  <div class="detail-body">
+    <div class="detail-content">
+      <h2>Project Overview</h2>
+      <p>Health and Orange is an e-commerce website specialising in edible cold-pressed oils within the health and nutrition niche. When the project began, the site had minimal organic presence &mdash; receiving just 12 clicks and 531 impressions per month from Google Search.</p>
+      <p>Within under 4 months, the website achieved 500 monthly clicks, 23,600+ impressions, and visibility across 870+ keywords including high-intent commercial queries directly tied to their products.</p>
+      <h2>The Challenge</h2>
+      <p>The brand operated in a competitive health and wellness space where established authority sites dominate. The site had no existing content strategy, minimal on-page optimisation, and weak internal linking &mdash; meaning Google had little reason to surface it for relevant searches.</p>
+      <h2>The Strategy</h2>
+      <p><strong>Keyword Research &amp; Targeting:</strong> Identifying low-competition, high-intent keywords around walnut oil, cold-pressed oils, and related health benefits &mdash; terms real buyers were searching for but where large sites weren't dominating.</p>
+      <p><strong>On-Page SEO &amp; Content Optimisation:</strong> Every key product page and article was rewritten to align with user search intent, improving title tags, meta descriptions, headings, and body content.</p>
+      <p><strong>Internal Linking:</strong> A deliberate structure was built to pass authority between pages, improve crawlability, and guide visitors naturally through product discovery.</p>
+      <p><strong>Search Intent Alignment:</strong> Each page was evaluated for buyer journey stage and content shaped to attract qualified, converting traffic.</p>
+      <h2>The Results</h2>
+      <p>Organic clicks grew from 12 to 500 (a 4,066% increase). Impressions jumped from 531 to over 23,600. Average position improved from 10.2 to 7.1, pushing multiple keywords from page 2 to page 1. The site now ranks for 870+ keywords including branded, product-specific, and informational searches.</p>
+    </div>
+    <div class="detail-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Before vs After</div>
+        <table class="ctable"><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Growth</th></tr></thead><tbody>
+          <tr><td class="mn">Clicks</td><td>12</td><td class="va">500</td><td class="vg">+4,066%</td></tr>
+          <tr><td class="mn">Impressions</td><td>531</td><td class="va">23,600</td><td class="vg">+4,344%</td></tr>
+          <tr><td class="mn">CTR</td><td>2.3%</td><td class="va">2.1%</td><td class="vg">Stable</td></tr>
+          <tr><td class="mn">Avg. Position</td><td>10.2</td><td class="va">7.1</td><td class="vg">Improved</td></tr>
+        </tbody></table>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Top Keywords</div>
+        <ul class="kw-list">
+          <li class="kw-item"><span>health and orange</span><span class="kw-badge">108 clicks</span></li>
+          <li class="kw-item"><span>health and orange walnut oil</span><span class="kw-badge">30 clicks</span></li>
+          <li class="kw-item"><span>walnut oil</span><span class="kw-badge">13 clicks</span></li>
+          <li class="kw-item"><span>health orange</span><span class="kw-badge">10 clicks</span></li>
+          <li class="kw-item"><span>walnut oil side effects</span><span class="kw-badge">6 clicks</span></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Time Period</div>
+        <div class="snap-info"><strong>Previous</strong><br>27 Nov 2024 &ndash; 30 Nov 2025<br><strong style="display:block;margin-top:.5rem;">Current</strong>1 Dec 2025 &ndash; 27 Mar 2026</div>
+      </div>
+    </div>
+  </div>
+  <footer><div><div class="footer-name">Krish Sonowal</div><div class="footer-note">SEO Specialist &middot; Available for projects</div></div><div class="footer-contact"><p>Let's work together</p><a href="mailto:hello@krishsonowal.com">hello@krishsonowal.com</a></div></footer>
+</div>
+
+
+<!-- INTERNIFY -->
+<div id="page-internify" class="page detail-page">
+  <div class="detail-hero">
+    <button class="back-btn" onclick="goHome()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to all projects</button>
+    <div class="detail-eyebrow"><span class="detail-tag">EdTech</span><span class="detail-tag">Careers &amp; Internships</span><span class="detail-period">3-month campaign</span></div>
+    <h1 class="detail-title">Internify &mdash;<br><em>120%+ organic traffic growth</em><br>in 3 months</h1>
+    <p class="detail-subtitle">A student-focused internship platform doubled its organic reach in 3 months through targeted keyword strategy, on-page optimisation, and content aligned with what university students were actively searching for.</p>
+    <div class="summary-strip">
+      <div class="summary-stat"><div class="summary-stat-val">2,860</div><div class="summary-stat-growth">from 1,290 clicks &middot; +121%</div><div class="summary-stat-label">Monthly Clicks</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">28,400</div><div class="summary-stat-growth">from 16,800 &middot; +69%</div><div class="summary-stat-label">Monthly Impressions</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">5.9</div><div class="summary-stat-growth">improved from position 10.1</div><div class="summary-stat-label">Avg. Search Position</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">700+</div><div class="summary-stat-growth">total keywords ranking</div><div class="summary-stat-label">Keyword Footprint</div></div>
+    </div>
+  </div>
+  <div class="detail-body">
+    <div class="detail-content">
+      <h2>Project Overview</h2>
+      <p>Internify is a platform focused on internships and student opportunities, targeting university students searching for internships and career-related resources. When the SEO engagement began, the platform was generating moderate traffic but was largely stuck on page 2 of Google.</p>
+      <p>Over 3 months, a structured campaign pushed the platform firmly onto page 1 &mdash; growing monthly clicks from 1,290 to 2,860, improving average position from 10.1 to 5.9, and raising CTR from 7.7% to 10.1%.</p>
+      <h2>The Challenge</h2>
+      <p>Internify operated where larger job boards dominate generic searches. The challenge was carving out a specific niche around student and university internship searches. CTR was also underperforming, suggesting titles and descriptions weren't compelling enough to earn clicks even when appearing in results.</p>
+      <h2>The Strategy</h2>
+      <p><strong>Student-Specific Keyword Targeting:</strong> Focusing on highly specific, student-intent queries like "fyugp internship", "internship for fyugp students", and location-based variations such as "internify kochi" &mdash; terms with lower competition but high relevance.</p>
+      <p><strong>On-Page SEO Optimisation:</strong> Key landing pages were restructured with improved title tags, meta descriptions, and body content. Titles and descriptions were rewritten to directly address student needs and stand out against generic job board listings.</p>
+      <p><strong>Internal Linking &amp; Intent Alignment:</strong> Improved internal linking distributed authority more effectively, while content was reshaped to deliver on user intent immediately.</p>
+      <h2>The Results</h2>
+      <p>Monthly organic clicks grew from 1,290 to 2,860 (+121%). Impressions expanded from 16,800 to 28,400. Average position improved from 10.1 to 5.9. CTR improved from 7.7% to 10.1%, reflecting strong alignment between the site's content and student search behaviour. The platform now ranks for 700+ keywords.</p>
+    </div>
+    <div class="detail-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Before vs After</div>
+        <table class="ctable"><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Growth</th></tr></thead><tbody>
+          <tr><td class="mn">Clicks</td><td>1,290</td><td class="va">2,860</td><td class="vg">+121%</td></tr>
+          <tr><td class="mn">Impressions</td><td>16,800</td><td class="va">28,400</td><td class="vg">+69%</td></tr>
+          <tr><td class="mn">CTR</td><td>7.7%</td><td class="va">10.1%</td><td class="vg">Improved</td></tr>
+          <tr><td class="mn">Avg. Position</td><td>10.1</td><td class="va">5.9</td><td class="vg">Improved</td></tr>
+        </tbody></table>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Top Keywords</div>
+        <ul class="kw-list">
+          <li class="kw-item"><span>internify</span><span class="kw-badge">Branded</span></li>
+          <li class="kw-item"><span>fyugp internship</span><span class="kw-badge">High intent</span></li>
+          <li class="kw-item"><span>internship for fyugp students</span><span class="kw-badge">High intent</span></li>
+          <li class="kw-item"><span>internify kochi</span><span class="kw-badge">Local</span></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Project Snapshot</div>
+        <div class="snap-info"><strong>Duration</strong><br>3 months<br><strong style="display:block;margin-top:.5rem;">Niche</strong>EdTech &middot; Student Careers<br><strong style="display:block;margin-top:.5rem;">Keywords</strong>700+ total ranking</div>
+      </div>
+    </div>
+  </div>
+  <footer><div><div class="footer-name">Krish Sonowal</div><div class="footer-note">SEO Specialist &middot; Available for projects</div></div><div class="footer-contact"><p>Let's work together</p><a href="mailto:hello@krishsonowal.com">hello@krishsonowal.com</a></div></footer>
+</div>
+
+
+<!-- LEDGERSCFO -->
+<div id="page-ledgerscfo" class="page detail-page">
+  <div class="detail-hero">
+    <button class="back-btn" onclick="goHome()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to all projects</button>
+    <div class="detail-eyebrow"><span class="detail-tag">Finance</span><span class="detail-tag">CFO &amp; Business Advisory</span><span class="detail-period">3-month campaign</span></div>
+    <h1 class="detail-title">LedgersCFO &mdash;<br><em>110% traffic growth &amp; a 3x CTR jump</em><br>in 3 months</h1>
+    <p class="detail-subtitle">A finance and consulting firm offering CFO support, tax consulting, and business advisory went from buried in deep search pages to strong page 1 visibility &mdash; with a click-through rate that tripled and traffic quality improving significantly.</p>
+    <div class="summary-strip">
+      <div class="summary-stat"><div class="summary-stat-val">268</div><div class="summary-stat-growth">from 127 clicks &middot; +110%</div><div class="summary-stat-label">Monthly Clicks</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">14.9%</div><div class="summary-stat-growth">from 4.6% &middot; 3x improvement</div><div class="summary-stat-label">Click-Through Rate</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">20.2</div><div class="summary-stat-growth">improved from position 60.8</div><div class="summary-stat-label">Avg. Search Position</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">3x</div><div class="summary-stat-growth">click-through rate improvement</div><div class="summary-stat-label">Search Relevance</div></div>
+    </div>
+  </div>
+  <div class="detail-body">
+    <div class="detail-content">
+      <h2>Project Overview</h2>
+      <p>LedgersCFO is a finance and consulting website focused on services including CFO support, tax consulting, and business advisory. When the project began, the site had a very low average position of 60.8 &mdash; buried deep in Google results &mdash; generating just 127 clicks per month despite having 2,740 impressions.</p>
+      <p>Within 3 months, organic traffic more than doubled to 268 clicks, average position improved dramatically to 20.2, and CTR tripled from 4.6% to 14.9%.</p>
+      <h2>Understanding the Numbers</h2>
+      <p>Total impressions decreased from 2,740 to 1,800 &mdash; a positive signal. It reflects a deliberate shift away from broad, low-relevance search appearances toward more targeted, high-intent queries where LedgersCFO genuinely belongs. Fewer irrelevant impressions, far more meaningful clicks.</p>
+      <h2>The Challenge</h2>
+      <p>Professional services firms like LedgersCFO face a specific SEO challenge: the audience is small, highly specific, and searching with very particular language. A founder searching for fractional CFO support uses very different terms than someone looking for a general accountant. The site also had a very low starting position (60.8 average), indicating Google had little confidence in the pages' relevance.</p>
+      <h2>The Strategy</h2>
+      <p><strong>Financial Keyword Targeting:</strong> Research focused on the specific language used by LedgersCFO's target clients &mdash; founders, business owners, and finance decision-makers. This surfaced high-intent terms like "due diligence for founders", "fp&amp;a for fractional cfo", and branded queries like "ledgerscfo".</p>
+      <p><strong>On-Page SEO &amp; Content Optimisation:</strong> Service pages were restructured and rewritten to directly address the queries and pain points of the intended audience. Title tags and meta descriptions were rewritten to be both keyword-relevant and compelling enough to earn clicks.</p>
+      <p><strong>Site Structure &amp; Intent Alignment:</strong> The website structure was refined to clearly communicate what the firm does and who it serves, reinforcing topical authority in the finance and advisory space.</p>
+      <h2>The Results</h2>
+      <p>Organic traffic grew from 127 to 268 clicks (+110%). Average position improved from 60.8 to 20.2. CTR tripled from 4.6% to 14.9%, reflecting strong alignment between the site's content and what searchers were looking for. The site began ranking for new finance keywords including branded, founder-specific, and service-level searches.</p>
+    </div>
+    <div class="detail-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Before vs After</div>
+        <table class="ctable"><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Change</th></tr></thead><tbody>
+          <tr><td class="mn">Clicks</td><td>127</td><td class="va">268</td><td class="vg">+110%</td></tr>
+          <tr><td class="mn">Impressions</td><td>2,740</td><td class="va">1,800</td><td class="vg">More targeted</td></tr>
+          <tr><td class="mn">CTR</td><td>4.6%</td><td class="va">14.9%</td><td class="vg">3x improved</td></tr>
+          <tr><td class="mn">Avg. Position</td><td>60.8</td><td class="va">20.2</td><td class="vg">Improved</td></tr>
+        </tbody></table>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">New Keywords Ranking</div>
+        <ul class="kw-list">
+          <li class="kw-item"><span>ledgerscfo</span><span class="kw-badge">Branded &middot; #1</span></li>
+          <li class="kw-item"><span>due diligence for founders</span><span class="kw-badge">High intent</span></li>
+          <li class="kw-item"><span>fp&amp;a for fractional cfo</span><span class="kw-badge">High intent</span></li>
+          <li class="kw-item"><span>cfo support services</span><span class="kw-badge">Commercial</span></li>
+          <li class="kw-item"><span>tax consulting advisory</span><span class="kw-badge">Commercial</span></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Project Snapshot</div>
+        <div class="snap-info"><strong>Duration</strong><br>3 months<br><strong style="display:block;margin-top:.5rem;">Niche</strong>Finance &middot; CFO &amp; Advisory<br><strong style="display:block;margin-top:.5rem;">Key win</strong>CTR tripled to 14.9%</div>
+      </div>
+    </div>
+  </div>
+  <footer><div><div class="footer-name">Krish Sonowal</div><div class="footer-note">SEO Specialist &middot; Available for projects</div></div><div class="footer-contact"><p>Let's work together</p><a href="mailto:hello@krishsonowal.com">hello@krishsonowal.com</a></div></footer>
+</div>
+
+
+<!-- P3 INDIA -->
+<div id="page-p3india" class="page detail-page">
+  <div class="detail-hero">
+    <button class="back-btn" onclick="goHome()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to all projects</button>
+    <div class="detail-eyebrow"><span class="detail-tag">E-commerce</span><span class="detail-tag">Apparel</span><span class="detail-period">26 May &ndash; 16 June &middot; ~3&ndash;4 weeks</span></div>
+    <h1 class="detail-title">P3 India &mdash;<br><em>Position 65 to page 1 &amp; 35,800%<br>product visibility growth</em></h1>
+    <p class="detail-subtitle">An e-commerce apparel brand saw dramatic ranking and visibility improvements in under a month &mdash; with one key product page jumping from #65 to #7 on Google, and sitewide organic traffic and engagement growing consistently through targeted on-page SEO.</p>
+    <div class="summary-strip">
+      <div class="summary-stat"><div class="summary-stat-val">#7</div><div class="summary-stat-growth">improved from position 65.1</div><div class="summary-stat-label">Product Page Ranking</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">35,800%</div><div class="summary-stat-growth">increase in product views</div><div class="summary-stat-label">Product Visibility</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">+13.44%</div><div class="summary-stat-growth">sitewide organic traffic growth</div><div class="summary-stat-label">Organic Traffic</div></div>
+      <div class="summary-stat"><div class="summary-stat-val">8,754</div><div class="summary-stat-growth">engaged sessions via Google Analytics</div><div class="summary-stat-label">Engaged Sessions</div></div>
+    </div>
+  </div>
+  <div class="detail-body">
+    <div class="detail-content">
+      <h2>Project Overview</h2>
+      <p>P3 India is an e-commerce apparel brand where the focus was on improving product visibility, keyword rankings, and overall organic search performance. The engagement ran for approximately 3&ndash;4 weeks, from 26 May to 16 June &mdash; a tight timeline that required a precise, high-impact approach rather than a broad, long-term strategy.</p>
+      <p>In that short window, one key product page moved from position 65.1 to 7.2 on Google, a single product experienced a 35,800% increase in views, and sitewide organic traffic grew by 13.44% &mdash; demonstrating how quickly targeted SEO can move the needle when applied to the right pages.</p>
+      <h2>The Challenge</h2>
+      <p>E-commerce apparel is a highly competitive space, with large marketplaces and established fashion brands dominating most category searches. For a brand like P3 India, the path to organic growth isn't competing head-on with giants &mdash; it's finding the specific product and keyword opportunities where the site can rank and win.</p>
+      <p>The core challenge was identifying which product pages had the most potential for rapid ranking improvement, and executing on-page changes precise enough to move the needle within weeks rather than months.</p>
+      <h2>The Strategy</h2>
+      <p><strong>High-Priority Product Page Optimisation:</strong> Rather than spreading effort across the entire catalogue, the strategy focused on identifying the product pages with the greatest ranking potential &mdash; pages close to breaking onto page 1, or where targeted keyword adjustments could produce the biggest jump. This focus is what enabled the key product page to move from position 65 to 7 in such a short time.</p>
+      <p><strong>Keyword Targeting &amp; On-Page Refinement:</strong> Product titles, descriptions, and metadata were refined to better match the specific search queries P3 India's target customers were using &mdash; not just generic category terms, but specific intent-driven queries that real shoppers use when searching for apparel.</p>
+      <p><strong>Search Intent Alignment:</strong> Product pages were evaluated and updated to reflect what a user expects to find when landing from a search result &mdash; clear product information, relevant keywords in the right places, and a structure that signals relevance to Google's ranking systems.</p>
+      <h2>The Results</h2>
+      <p>For the key target product page, organic clicks grew from 5 to 11, impressions increased, and average search position improved dramatically from 65.1 to 7.2 &mdash; moving the product from near-invisible to page 1 on Google.</p>
+      <p>At the product level, one item experienced a 35,800% increase in views, with other products also showing growth of over 200%, indicating that improved discoverability was lifting the catalogue more broadly.</p>
+      <p>At the sitewide level, Google Analytics data showed 8,754 engaged sessions and a 13.44% increase in organic search traffic &mdash; consistent, measurable growth driven entirely by SEO improvements made in under a month.</p>
+    </div>
+    <div class="detail-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Key Product Page</div>
+        <table class="ctable"><thead><tr><th>Metric</th><th>Before</th><th>After</th><th>Change</th></tr></thead><tbody>
+          <tr><td class="mn">Avg. Position</td><td>65.1</td><td class="va">7.2</td><td class="vg">Page 1</td></tr>
+          <tr><td class="mn">Clicks</td><td>5</td><td class="va">11</td><td class="vg">+120%</td></tr>
+          <tr><td class="mn">Product Views</td><td>Baseline</td><td class="va">+35,800%</td><td class="vg">&#128200;</td></tr>
+        </tbody></table>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Sitewide Results</div>
+        <ul class="kw-list">
+          <li class="kw-item"><span>Organic traffic growth</span><span class="kw-badge">+13.44%</span></li>
+          <li class="kw-item"><span>Engaged sessions</span><span class="kw-badge">8,754</span></li>
+          <li class="kw-item"><span>Other product view growth</span><span class="kw-badge">200%+</span></li>
+          <li class="kw-item"><span>Key product ranking</span><span class="kw-badge">#65 to #7</span></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Project Snapshot</div>
+        <div class="snap-info"><strong>Duration</strong><br>3&ndash;4 weeks<br><strong style="display:block;margin-top:.5rem;">Timeline</strong>26 May &ndash; 16 June<br><strong style="display:block;margin-top:.5rem;">Niche</strong>E-commerce &middot; Apparel</div>
+      </div>
+    </div>
+  </div>
+  <footer><div><div class="footer-name">Krish Sonowal</div><div class="footer-note">SEO Specialist &middot; Available for projects</div></div><div class="footer-contact"><p>Let's work together</p><a href="mailto:hello@krishsonowal.com">hello@krishsonowal.com</a></div></footer>
+</div>
+
+
+<script>
+function showPage(id){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function openProject(slug){showPage('page-'+slug);}
+function goHome(){showPage('page-home');}
+function delayScroll(sel){setTimeout(function(){var el=document.querySelector(sel);if(el)el.scrollIntoView({behavior:'smooth'});},80);}
+</script>
+</body>
+</html>
